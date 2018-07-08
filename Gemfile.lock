@@ -86,6 +86,8 @@ GEM
     erubi (1.7.1)
     execjs (2.7.0)
     ffi (1.9.25)
+    github-ds (0.2.9)
+      activerecord (>= 3.2, < 6.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     http-cookie (1.0.3)
@@ -237,6 +239,7 @@ DEPENDENCIES
   capybara (>= 2.15, < 4.0)
   chromedriver-helper
   coffee-rails (~> 4.2)
+  github-ds
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   mechanize

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  data: 
+  rank: 1
+  category: MyString
+  product_dimensions: MyString
+  product: one
+
+two:
+  data: 
+  rank: 1
+  category: MyString
+  product_dimensions: MyString
+  product: two

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>ASIN:</strong>
+  <%= @product.asin %>
+</p>
+
+
+<p>
+  <strong>Category:</strong>
+  <%= @product_details.category %>
+</p>
+
+<p>
+  <strong>Best Sellers Rank:</strong>
+  <div class="pad10"></div>
+  #<%= @product_details.rank %> in <%= @product_details.category %>
+  <% @product_details.data["best_sellers_rank"].each do |pd|%>
+    <div class="pad10"></div>
+    #<%= pd["rank"]%> in <%= pd["ladder"] %>
+  <% end %>
+</p>
+
+<%= link_to 'Back', products_path %>

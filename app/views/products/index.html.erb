@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Products</h1>
+
+  <p><%= link_to '+New Product', new_product_path %></p>
+
+<% @products.each do |product| %>
+  <p>
+    <strong>ASIN:</strong>
+    <%= link_to product.asin, product %>
+
+  </p>
+
+  <% product_details = product.product_scrapes.last %>
+  <p>
+    <strong>Package Dimensions:</strong>
+    <%= product_details.product_dimensions %>
+  </p>
+
+  <p>
+    <strong>Category:</strong>
+    <%= product_details.category %>
+  </p>
+
+  <p>
+    <strong>Best Sellers Rank:</strong>
+    <div class="pad10"></div>
+    #<%= product_details.rank %> in <%= product_details.category %>
+    <% product_details.data["best_sellers_rank"].each do |pd|%>
+      <div class="pad10"></div>
+      #<%= pd["rank"]%> in <%= pd["ladder"] %>
+    <% end %>
+  </p>
+
+  <p>
+    <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to 'Update with Amazon', product, method: :put %>
+
+  </p>
+<% end %>
+
+<div class="pad10"></div>
+

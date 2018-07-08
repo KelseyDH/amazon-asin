@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_04_092505) do
+ActiveRecord::Schema.define(version: 2018_07_07_235312) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,4 +24,23 @@ ActiveRecord::Schema.define(version: 2018_07_04_092505) do
     t.index ["parent_id"], name: "index_categories_on_parent_id"
   end
 
+  create_table "product_scrapes", force: :cascade do |t|
+    t.jsonb "data"
+    t.integer "rank"
+    t.string "category", null: false
+    t.string "product_dimensions"
+    t.bigint "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_product_scrapes_on_product_id"
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "asin", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["asin"], name: "index_products_on_asin", unique: true
+  end
+
+  add_foreign_key "product_scrapes", "products"
 end

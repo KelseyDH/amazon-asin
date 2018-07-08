@@ -39,6 +39,8 @@ gem 'acts_as_tree'
 gem 'mechanize'
 gem 'nokogiri'
 
+gem 'github-ds'
+
 gem "amazonian", path: "/Users/kelsey/interviews/junglescout-assignment/amazon-asin/app/lib/amazonian"
 
 # Reduces boot times through caching; required in config/boot.rb
