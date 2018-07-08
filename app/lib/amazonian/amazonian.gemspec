@@ -37,5 +37,4 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec", "~> 3.0"
   spec.add_development_dependency "mechanize", '~> 2.7', '>= 2.7.6'
   spec.add_development_dependency "activesupport", '~> 5.2', '>= 4.2.0'
-  spec.add_development_dependency "byebug", "~> 10.0"
 end
