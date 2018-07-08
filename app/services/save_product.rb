@@ -9,7 +9,7 @@ class SaveProduct
 
   def call
   result = GitHub::Result.new {
-      GitHub::Result.new { @data = Amazonian::Client.new(asin).call }
+      GitHub::Result.new { @data = Amazoned::Client.new(asin).call }
     }.then { |value|
       GitHub::Result.new {
         save_product! }
