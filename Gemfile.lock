@@ -229,7 +229,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts_as_tree
-  amazoned
+  amazoned (~> 0.1.0)
   bootsnap (>= 1.1.0)
   byebug
   capybara (>= 2.15, < 4.0)
