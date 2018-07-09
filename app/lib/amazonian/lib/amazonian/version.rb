@@ -1,3 +1,3 @@
-module Amazonian
-  VERSION = "0.1.0"
-end
+# module Amazonian
+#   VERSION = "0.1.0"
+# end
