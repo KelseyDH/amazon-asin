@@ -29,10 +29,10 @@ class ProductsController < ApplicationController
     result = SaveProduct.new(@product).call
     respond_to do |format|
       if result.ok?
-        format.html { redirect_to @product, notice: 'Product was successfully created.' }
+        format.html { redirect_to products_url, notice: 'Product data successfully imported.' }
         format.json { render :show, status: :created, location: @product }
       else
-        format.html { render :new }
+        format.html { render :new, notice: 'Unable to add amazon product.' }
         format.json { render json: result.error, status: :unprocessable_entity }
       end
     end
@@ -47,7 +47,7 @@ class ProductsController < ApplicationController
         format.html { redirect_to products_url, notice: 'Product details successfully fetched again from Amazon.' }
         format.json { render :show, status: :ok, location: @product }
       else
-        format.html { render :edit }
+        format.html { redirect_to products_url, notice: 'Unable to fetch product details from Amazon. Please try again.' }
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end
